@@ -1,0 +1,73 @@
+.btn{
+    @apply font-poppins  text-xs font-medium uppercase py-16  text-center inline-block leading-none;
+    border-radius:4px;
+    min-width: 190px;
+    background:transparent;
+    cursor: pointer;
+    transition:all 0.4s;
+    &:focus,&:active,&:link{
+        box-shadow: none;
+        outline:none;
+    }
+
+    @screen sm{
+        @apply text-xs;
+    }
+
+    @screen md{
+        @apply text-sm py-20;
+        min-width:220px;
+    }
+    
+}
+.btn-ghost{
+    @apply border-black;
+    border-width:1px;
+    &:hover{
+        @apply bg-black text-white;
+    }
+}
+
+.btn-white{
+    @apply bg-white border-white font-bold py-20;
+    &:hover{
+        @apply bg-black text-white;
+    }
+}
+
+.btn-black{
+    border-width: 1px;
+    @apply bg-black  border-black text-white font-bold py-20;
+    &:hover{
+        @apply  bg-transparent text-black;
+        border:1px solid #000;
+    }
+}
+
+.btn-green{
+    @apply bg-green-400 text-white;
+    &:hover{
+        @apply bg-gray-300;
+    }
+}
+
+.btn--sm{
+    min-width:120px ;
+    @apply text-xs;
+    @screen md{
+        @apply text-xs py-14;
+        min-width:180px;
+    }
+}
+
+.btn-loader{
+    @apply py-6
+}
+
+.btn:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+    &:hover{
+     
+    }
+}

@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Fjalla_One } from "next/font/google";
 
-import "./globals.css";
+
+import "../globals.css";
+import {Header} from "@/components";
+import StoreProvider from "@/atoms/StoreProvider";
 
 const poppins = Poppins({ weight: '400', subsets:['latin'],  variable:'--font-poppins'});
 const fjallaOne = Fjalla_One({ weight: '400', subsets:['latin'], variable:'--font-fjalla'});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${fjallaOne.variable}`}>{children}</body>
+
+      <body className={`${poppins.variable} ${fjallaOne.variable}`}>
+        <StoreProvider>
+            <Header/>
+            {children}
+        </StoreProvider>
+      </body>
     </html>
   );
 }

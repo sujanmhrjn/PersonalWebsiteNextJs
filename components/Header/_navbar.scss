@@ -1,0 +1,94 @@
+.navbar{
+    @apply bg-white relative;
+    @media screen and (max-width:991px){
+        .o-container{
+            max-width:100%;
+        }
+    }
+    @screen lg{
+        background-color:transparent;
+    }
+}
+.navbar-content{
+    @apply relative z-40;
+    
+}
+
+.navbar-collapse{
+    @apply fixed top-0 left-0 right-0 h-screen bg-white overflow-auto pb-20 z-30;
+    padding-top: 80px;
+ 
+    &.collapsed{
+        display: none;
+    }
+    &.active{
+        display: block;
+    }
+
+    @screen lg{
+        @apply relative h-full pt-0  pb-0;
+        &.collapsed{
+            display:block;
+        }
+    }
+}
+.navbar-top{
+    @apply pt-8;
+}
+.navbar-toggler{
+    @screen lg{
+        display:none;
+    }
+}
+.navbar-logo{
+    @screen lg{
+        svg{
+            height:85px;
+            width:100px;
+        }
+    }
+}
+.navbar-nav{
+   
+    .btn{
+        min-width:240px;
+    }
+   .nav-list{
+    
+    @screen lg{
+        @apply flex;
+        a{
+            letter-spacing:1px;
+        }
+        .btn{
+            @apply text-sm py-14;
+            min-width:140px;
+            
+        }
+    }
+    
+
+   }
+   .nav-list--other{
+       @screen lg{
+           @apply hidden;
+       }
+   }
+   @screen lg{
+       @apply flex items-center;
+   }
+}
+
+
+.dark-mode{
+    .navbar-logo{
+        svg{
+            circle{
+                fill:#545454;
+            }
+        }
+    }
+    .navbar-collapse{
+        background-color:#545454;
+    }
+}
